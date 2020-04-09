@@ -40,56 +40,55 @@ echo Running all tests..."\n\n
 
 # Add tests below
 
-#MIN: (empty) Range 0
+#MIN: (empty) Range 1
 test "PINA: 0x00 => PORTC: 0x40"
 setPINA 0x00
 continue 5
 expectPORTC 0x40
 checkresult
 
-#MAX: (full) (should ignore first F) Range 7
-test "PINA: 0xFF => PORTC: 0x3F"
-setPINA 0xFF
+#Range 2
+test "PINA: 0x31 => PORTC: 0xE0"
+setPINA 0x31
 continue 5
-expectPORTC 0x3F
-checkresult
-
-#Range 3
-test "PINA: 0x01 => PORTC: 0x60"
-setPINA 0x01
-continue 5
-expectPORTC 0x60
+expectPORTC 0xE0
 checkresult
 
 
 #Range 3
-test "PINA: 0x04 => PORTC: 0x70"
-setPINA 0x04
+test "PINA: 0x34 => PORTC: 0xF0"
+setPINA 0x34
 continue 5
-expectPORTC 0x70
+expectPORTC 0xF0
 checkresult
 
 #Range 4
-test "PINA: 0x50 => PORTC: 0x38"
-setPINA 0x05
+test "PINA: 0x25 => PORTC: 0x38"
+setPINA 0x25
 continue 5
 expectPORTC 0x38
 checkresult
 
 #Range 5
-test "PINA: 0x08 => PORTC: 0x3C"
-setPINA 0x08
+test "PINA: 0x48 => PORTC: 0x3C"
+setPINA 0x48
 continue 5
 expectPORTC 0x00x3C
 checkresult
 
 #Range 6
-test "PINA: 0x0A => PORTC: 0x3E"
-setPINA 0x0A
+test "PINA: 0x5A => PORTC: 0x3E"
+setPINA 0x5A
 continue 5
 expectPORTC 0x3E
 checkresult
 
+#MAX: (full) Range 7
+test "PINA: 0x7F => PORTC: 0x3F"
+setPINA 0x7F
+continue 5
+expectPORTC 0x3F
+checkresult
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed

@@ -25,24 +25,26 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
 	//Read input	
-	tmpA = PINA & 0x0F;
+	tmpA = PINA & 0x7F;
 	
-	if ((tmpA == 0x01) || (tmpA == 0x02))
+	if (((tmpA & 0x0F) == 0x01) || ((tmpA & 0x0F) == 0x02))
 		tmpC = 0x20;
-	else if ((tmpA == 0x03) || (tmpA == 0x04))
+	else if (((tmpA & 0x0F) == 0x03) || ((tmpA & 0x0F) == 0x04))
                 tmpC = 0x30;
-	else if ((tmpA == 0x05) || (tmpA == 0x06))
+	else if (((tmpA & 0x0F) == 0x05) || ((tmpA & 0x0F) == 0x06))
                 tmpC = 0x38;
-	else if ((tmpA == 0x07) || (tmpA == 0x08) || (tmpA == 0x09))
+	else if (((tmpA & 0x0F) == 0x07) || ((tmpA & 0x0F) == 0x08) || ((tmpA & 0x0F) == 0x09))
                 tmpC = 0x3C;
-	else if ((tmpA == 0x0A) || (tmpA == 0x0B) || (tmpA == 0x0C))
+	else if (((tmpA & 0x0F) == 0x0A) || ((tmpA & 0x0F) == 0x0B) || ((tmpA & 0x0F)== 0x0C))
                 tmpC = 0x3E;
-	else if (( tmpA == 0x0D) || (tmpA == 0x0E) || (tmpA == 0x0F))
+	else if (((tmpA & 0x0F) == 0x0D) || ((tmpA & 0x0F) == 0x0E) || ((tmpA & 0x0F)== 0x0F))
                 tmpC = 0x3F;
 
-	if (tmpA <= 0x04) 
+	if ((tmpA & 0x0F) <= 0x04) 
 		tmpC = (tmpC & 0xBF) | 0x40;
 
+	if ((tmpA & 0x70) == 0x30)
+                tmpC = (tmpC & 0x7F) | 0x80;
 
 	PORTC = tmpC;	
 

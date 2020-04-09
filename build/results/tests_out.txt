@@ -3,6 +3,6 @@ Note: automatically using hardware breakpoints for read-only addresses.
 ======================================================
 Running all tests..."
 
-"PINA: 0x00 => PORTC: 0x40"..."PINA: 0xFF => PORTC: 0x3F"..."PINA: 0x01 => PORTC: 0x60"..."PINA: 0x04 => PORTC: 0x70"..."PINA: 0x50 => PORTC: 0x38"..."PINA: 0x08 => PORTC: 0x3C"...test/tests.gdb:83: Error in sourced command file:
+"PINA: 0x00 => PORTC: 0x40"..."PINA: 0x31 => PORTC: 0xE0"..."PINA: 0x34 => PORTC: 0xF0"..."PINA: 0x25 => PORTC: 0x38"..."PINA: 0x48 => PORTC: 0x3C"...test/tests.gdb:76: Error in sourced command file:
 Invalid number "0x00x3C".
 Quitting: Remote doesn't know how to detach
