@@ -43,8 +43,8 @@ int main(void) {
 	if ((tmpA & 0x0F) <= 0x04) 
 		tmpC = (tmpC & 0xBF) | 0x40;
 
-	if ((tmpA & 0x70) == 0x30)
-                tmpC = (tmpC & 0x7F) | 0x80;
+//	if ((tmpA & 0x70) == 0x30)
+//                tmpC = (tmpC & 0x7F) | 0x80;
 
 	PORTC = tmpC;	
 

@@ -73,7 +73,7 @@ checkresult
 test "PINA: 0x48 => PORTC: 0x3C"
 setPINA 0x48
 continue 5
-expectPORTC 0x00x3C
+expectPORTC 0x3C
 checkresult
 
 #Range 6
