@@ -3,5 +3,5 @@ Note: automatically using hardware breakpoints for read-only addresses.
 ======================================================
 Running all tests..."
 
-"PIND: 0x05 => PORTB: 0x00"..."PIND: 0x77 => PORTB: 0x02"..."PIND: 0x46 => PORTB: 0x02"..."PIND: 0x0A => PORTB: 0x04"...======================================================
+"PIND: 0x05 => PORTB: 0x00"..."PIND: 0x77 => PORTB: 0x02"..."PIND: 0x45 => PORTB: 0x02"..."PIND: 0x0A => PORTB: 0x04"...======================================================
 Quitting: Remote doesn't know how to detach

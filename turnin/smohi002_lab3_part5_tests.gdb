@@ -56,8 +56,8 @@ checkresult
 
 
 #Test 3 at max
-test "PIND: 0x46 => PORTB: 0x02"
-setPIND 0x46
+test "PIND: 0x45 => PORTB: 0x02"
+setPIND 0x45
 continue 5
 expectPORTB 0x02
 checkresult

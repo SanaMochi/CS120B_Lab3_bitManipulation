@@ -24,9 +24,9 @@ int main(void) {
 	//Read input	
 	tmpD = PIND;	
 
-	if (tmpD >= 0x46)
+	if (tmpD >= 0x45)
 		tmpB = 0x02;
-	else if (tmpD > 5 && tmpD < 70)
+	else if (tmpD > 5 && tmpD < 0x45)
 		tmpB = 0x04;
 	else 
 		tmpB = 0x00;
