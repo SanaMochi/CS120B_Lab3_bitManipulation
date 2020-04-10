@@ -40,34 +40,47 @@ echo Running all tests..."\n\n
 
 # Add tests below
 
-#Test 1 below min
-test "PIND: 0x05 => PORTB: 0x00"
-setPIND 0x05
+#Test 1 at 5
+test "PIND: 0x02, PINB: 0x01 => PORTB: 0x00"
+setPIND 0x02
+setPINB 0x01
 continue 5
 expectPORTB 0x00
 checkresult
 
-#Test 2 above max
-test "PIND: 0x77 => PORTB: 0x02"
-setPIND 0x77
-continue 5
-expectPORTB 0x02
-checkresult
-
-
-#Test 3 at max
-test "PIND: 0x45 => PORTB: 0x02"
-setPIND 0x45
-continue 5
-expectPORTB 0x02
-checkresult
-
-#Test 4 mid range
-test "PIND: 0x0A => PORTB: 0x04"
-setPIND 0x0A
+#Test 2 between 70 and 5
+test "PIND: 0x05, PINB: 0x01 => PORTB: 0x04"
+setPIND 0x05
+setPINB 0x01
 continue 5
 expectPORTB 0x04
 checkresult
+
+
+#Test 3 greater than 70
+test "PIND: 0xFF, PINB: 0x01 => PORTB: 0x02"
+setPIND 0xFF
+setPINB 0x01
+continue 5
+expectPORTB 0x02
+checkresult
+
+#Test 4 at 70
+test "PIND: 0x45, PINB: 0x00 => PORTB: 0x02"
+setPIND 0x45
+setPINB 0x00
+continue 5
+expectPORTB 0x02
+checkresult
+
+#Test 5 below 5
+test "PIND: 0x02, PINB: 0x00 => PORTB: 0x00"
+setPIND 0x02
+setPINB 0x00
+continue 5
+expectPORTB 0x00
+checkresult
+
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed
