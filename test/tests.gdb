@@ -40,45 +40,45 @@ echo Running all tests..."\n\n
 
 # Add tests below
 
-#Test 1 at 5
-test "PIND: 0x02, PINB: 0x01 => PORTB: 0x00"
-setPIND 0x02
-setPINB 0x01
+#Test 1 
+test "PINA: 0x10, PINB: 0x01 => PORTB: 0x00"
+setPINA 0x10
 continue 5
-expectPORTB 0x00
+expectPORTB 0x01
+expectPORTC 0x00
 checkresult
 
-#Test 2 between 70 and 5
-test "PIND: 0x05, PINB: 0x01 => PORTB: 0x04"
-setPIND 0x05
-setPINB 0x01
+#Test 2 
+test "PINA: 0xD5 => PINB: 0x0D, PORTC: 0x50"
+setPINA 0xD5
 continue 5
-expectPORTB 0x04
+expectPORTB 0x0D
+expectPORTC 0x50
 checkresult
 
 
 #Test 3 greater than 70
-test "PIND: 0xFF, PINB: 0x01 => PORTB: 0x02"
-setPIND 0xFF
-setPINB 0x01
+test "PINA: 0xFF => PINB: 0x0F, PORTC: 0xF0"
+setPINA 0xFF
 continue 5
-expectPORTB 0x02
+expectPORTB 0x0F
+expectPORTC 0xF0
 checkresult
 
-#Test 4 at 70
-test "PIND: 0x45, PINB: 0x00 => PORTB: 0x02"
-setPIND 0x45
-setPINB 0x00
+#Test 4 
+test "PINA: 0x45 => PINB: 0x04, PORTC: 0x50"
+setPINA 0x45
 continue 5
-expectPORTB 0x02
+expectPORTB 0x04
+expectPORTC 0x50
 checkresult
 
-#Test 5 below 5
-test "PIND: 0x02, PINB: 0x00 => PORTB: 0x00"
-setPIND 0x02
-setPINB 0x00
+#Test 5
+test "PINA: 0x02 => PINB: 0x00, PORTB: 0x20"
+setPINA 0x02
 continue 5
 expectPORTB 0x00
+expectPORTC 0x20
 checkresult
 
 
