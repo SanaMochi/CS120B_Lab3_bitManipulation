@@ -40,7 +40,7 @@ echo Running all tests..."\n\n
 
 # Add tests below
 
-#MIN: (empty) Range 1
+#Test 1 empty
 test "PINA: 0x00 => PORTC: 0x40"
 setPINA 0x00
 continue 5
@@ -53,7 +53,6 @@ setPINA 0x31
 continue 5
 expectPORTC 0x60
 checkresult
-
 
 #Range 3
 test "PINA: 0x34 => PORTC: 0x70"
@@ -83,7 +82,7 @@ continue 5
 expectPORTC 0x3E
 checkresult
 
-#MAX: (full) Range 7
+#Range 7 (max)
 test "PINA: 0x7F => PORTC: 0x3F"
 setPINA 0x7F
 continue 5
